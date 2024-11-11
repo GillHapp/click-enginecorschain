@@ -51,6 +51,7 @@
     "@material-ui/core": "4.11.0",
     "@material-ui/icons": "4.9.1",
     "@material-ui/lab": "4.0.0-alpha.56",
+    "@particle-network/connectkit": "^2.0.9",
     "@supercharge/promise-pool": "^1.6.0",
     "algoliasearch": "3.33.0",
     "axios": "^0.18.1",
@@ -103,6 +104,7 @@
     "source-map-explorer": "^2.0.1",
     "three": "0.160.0",
     "url-search-params": "^1.0.2",
+    "viem": "^2",
     "web3modal": "^1.9.12",
     "xxhashjs": "^0.2.2"
   },
@@ -200,5 +202,6 @@
     "transformIgnorePatterns": [
       "<rootDir>/node_modules/(?!react-markdown|unified|remark-parse|mdast-util-from-markdown|micromark|decode-named-character-reference|remark-rehype|trim-lines|hast-util-whitespace|remark-gfm|mdast-util-gfm|mdast-util-find-and-replace|mdast-util-to-markdown|markdown-table|is-plain-obj)"
     ]
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

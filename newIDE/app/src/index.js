@@ -15,6 +15,18 @@ import { showErrorBox } from './UI/Messages/MessageBox';
 import VersionMetadata from './Version/VersionMetadata';
 import { loadPreferencesFromLocalStorage } from './MainFrame/Preferences/PreferencesProvider';
 import { getFullTheme } from './UI/Theme';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+
+// Import the ConnectKitProvider configuration (exported as ParticleConnectKit)
+import { ParticleConnectkit } from './components/Connectkit';
+
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  title: 'Particle Connect',
+  description: 'Demo showcasing a quickstart for Particle Connect 2.0',
+};
 
 const GD_STARTUP_TIMES = global.GD_STARTUP_TIMES || [];
 
@@ -43,7 +55,7 @@ try {
     });
     color = theme.muiTheme.palette.background.default;
   }
-} catch {}
+} catch { }
 
 document.getElementsByTagName('body')[0].style.backgroundColor = color;
 
@@ -64,7 +76,7 @@ const styles = {
 
 type State = {|
   loadingMessage: string,
-  App: ?Element<*>,
+    App: ?Element <*>,
 |};
 
 class Bootstrapper extends Component<{}, State> {
@@ -153,10 +165,12 @@ class Bootstrapper extends Component<{}, State> {
 
     return (
       <React.Fragment>
-        {App}
-        {loadingMessage && (
-          <div style={styles.loadingMessage}>{loadingMessage}</div>
-        )}
+        <ParticleConnectkit>
+          {App}
+          {loadingMessage && (
+            <div style={styles.loadingMessage}>{loadingMessage}</div>
+          )}
+        </ParticleConnectkit>
       </React.Fragment>
     );
   }

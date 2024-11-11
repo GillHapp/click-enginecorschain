@@ -16,16 +16,17 @@ import { isNativeMobileApp } from '../../../Utils/Platform';
 import NotificationChip from '../../../UI/User/NotificationChip';
 import { useResponsiveWindowSize } from '../../../UI/Responsive/ResponsiveWindowMeasurer';
 import SaveProjectIcon from '../../SaveProjectIcon';
+import { ConnectButton, useAccount } from '@particle-network/connectkit';
 import { NFTContext } from '../../../context/NFTContext';
 const electron = optionalRequire('electron');
 
 type Props = {|
   hasProject: boolean,
-  onOpenProjectManager: () => void,
-  onOpenProfile: () => void,
-  onOpenLanguageDialog: () => void,
-  onSave: () => Promise<void>,
-  canSave: boolean,
+    onOpenProjectManager: () => void,
+      onOpenProfile: () => void,
+        onOpenLanguageDialog: () => void,
+          onSave: () => Promise < void>,
+            canSave: boolean,
 |};
 
 export const HomePageHeader = ({
@@ -81,18 +82,9 @@ export const HomePageHeader = ({
               )} */}
               {/* Gola-k Start */}
               {/* Connect button */}
-              {currentAccount ? (
-                <FlatButton
-                  label={<Trans>Connected</Trans>}
-                  onClick={() => {}}
-                />
-              ) : (
-                <FlatButton
-                  label={<Trans>Connect</Trans>}
-                  onClick={connectWallet}
-                  // onClick={() => {}}
-                />
-              )}
+              <div>
+                <ConnectButton />
+              </div>
               {/* Gola-k End */}
               <UserChip onOpenProfile={onOpenProfile} />
               <NotificationChip />
